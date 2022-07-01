@@ -1,6 +1,6 @@
 import { FaShoppingCart } from 'react-icons/fa';
 import React, { useContext } from 'react'
-import { Form, Dropdown, Badge, Container, Navbar } from 'react-bootstrap';
+import { Form, Dropdown, Container, Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { StoreContext } from '../Context/Context';
 

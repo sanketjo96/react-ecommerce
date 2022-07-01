@@ -19,7 +19,7 @@ export default function AppBar() {
                     <Dropdown>
                         <Dropdown.Toggle variant="success" id="dropdown-basic">
                             <FaShoppingCart></FaShoppingCart>
-                            <Badge bg="success">{cart?.data.length ?? 0}</Badge>
+                            <span style={{ padding: '13px' }} bg="success">{cart?.data.length ?? 0}</span>
                         </Dropdown.Toggle>
 
                         <Dropdown.Menu>

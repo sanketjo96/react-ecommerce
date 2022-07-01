@@ -16,7 +16,7 @@ export default function SingleProduct({ product }) {
           <Card.Title>{product.title.slice(0, 10) + '...'}</Card.Title>
           <Card.Subtitle className="mb-2 text-muted" style={{ paddingBottom: '10px' }}>
             <div>
-              {product.price}
+              {product.price} ₹
             </div>
             <Ratings rating={product.rating.rate} />
             <div>

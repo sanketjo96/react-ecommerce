@@ -1,9 +1,11 @@
 import { FaShoppingCart } from 'react-icons/fa';
-import React from 'react'
+import React, { useContext } from 'react'
 import { Form, Dropdown, Badge, Container, Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import { StoreContext } from '../Context/Context';
 
 export default function AppBar() {
+    const { cart } = useContext(StoreContext)
     return (
         <div>
             <Navbar bg="dark" variant="dark" style={{ height: '80px' }}>
@@ -17,11 +19,13 @@ export default function AppBar() {
                     <Dropdown>
                         <Dropdown.Toggle variant="success" id="dropdown-basic">
                             <FaShoppingCart></FaShoppingCart>
-                            <Badge bg="success">{10}</Badge>
+                            <Badge bg="success">{cart?.data.length ?? 0}</Badge>
                         </Dropdown.Toggle>
 
                         <Dropdown.Menu>
-                            <span style={{ padding: '10px' }}>Cart is empty!!</span>
+                            <span style={{ padding: '10px' }}>
+                                {cart?.data?.length ? <Link to="/cart">Go To Cart</Link> : 'Cart is empty!!'}
+                            </span>
                         </Dropdown.Menu>
                     </Dropdown>
                 </Container>

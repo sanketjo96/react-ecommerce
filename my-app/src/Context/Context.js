@@ -16,7 +16,7 @@ export const AppContext = (props) => {
 
     const [filter, filterDispatch] = useReducer(FilterReducer, {
         sort: 'lowToHigh',
-        atleastReviewedBy: 100,
+        atleastReviewedBy: 700,
         rating: 5,
         searchQuery: ''
     })

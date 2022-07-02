@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import { StoreContext } from '../Context/Context';
 
 export default function AppBar() {
-    const { cart } = useContext(StoreContext)
+    const { cart, filter, filterDispatch } = useContext(StoreContext)
     return (
         <div>
             <Navbar bg="dark" variant="dark" style={{ height: '80px' }}>
@@ -14,7 +14,7 @@ export default function AppBar() {
                         <Link to="/">Shop-Lync</Link>
                     </Navbar.Brand>
                     <Navbar.Text className="search" style={{ width: 500 }}>
-                        <Form.Control type="text" placeholder="Search a product" />
+                        <Form.Control type="text" placeholder="Search a product" value={filter.searchQuery} onChange={e => filterDispatch({ type: 'SET_PRODUCT_SEARCH', payload: e.target.value })} />
                     </Navbar.Text>
                     <Dropdown>
                         <Dropdown.Toggle variant="success" id="dropdown-basic">

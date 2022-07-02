@@ -13,7 +13,7 @@ export default function SingleProduct({ product }) {
       <Card style={{ width: '18rem' }}>
         <Card.Img variant="top" src={product.image} alt={product.title} style={{ objectFit: 'contain', height: '15vw' }} />
         <Card.Body>
-          <Card.Title>{product.title.slice(0, 10) + '...'}</Card.Title>
+          <Card.Title>{product.title.slice(0, 20) + '...'}</Card.Title>
           <Card.Subtitle className="mb-2 text-muted" style={{ paddingBottom: '10px' }}>
             <div>
               {product.price} ₹
